@@ -1,0 +1,55 @@
+var cercle1=
+{
+  x:0,
+  y:200,
+  R:12
+}
+var cercle2=
+{
+  x:0,
+  y:100,
+  R:12
+}
+var cercle3=
+{
+  x:0,
+  y:300,
+  R:12
+}
+var cole=
+{
+  r:255,
+  f:0,
+  b:0
+}
+var sdpo=
+{
+  xx:100,
+  yy:50,
+  
+}
+var col=0
+function setup() {
+  createCanvas(600, 400);
+ 
+  background(col);
+}
+
+function draw() {
+  
+    cole.r=40;
+  cole.f=random(0,width)
+  cole.b=random(0,width)
+  sdpo.xx=random(0,width)
+  sdpo.yy=random(0,height)
+   fill(cole.r,cole.f,cole.b)
+   ellipse(sdpo.xx, sdpo.yy,22,24)
+ 
+   fill(sdpo.xx, sdpo.yy,22,24)
+  circle(cercle1.x,cercle1.y,cercle1.R)
+  
+  cercle1.x=(cercle1.x+1);
+  cercle1.R=cercle1.R+1;
+  col=col+1;
+  
+}
