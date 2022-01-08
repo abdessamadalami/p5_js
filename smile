@@ -1,0 +1,62 @@
+var smiles = [];
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function mousePressed() {
+  smiles.push(new smile(mouseX, mouseY,mouseX, mouseY))
+
+}
+
+function draw() {
+  background(0);
+  for (i = 0; i < smiles.length; i++) {
+    smiles[i].move();
+    smiles[i].display();
+  }
+}
+
+
+function smile(x,y,R,f) {
+
+
+  this.x = x
+  this.y = y
+  this.R = R
+  this.f = f
+
+  this.display = function() {
+    
+    fill(11, random(12),random(11))
+   
+    circle(this.x + this.R, this.y, this.R)
+    arc(this.x + this.R, this.y, this.R / 2, this.R / 2, 0.6, 2.2);
+    circle(this.x + this.R - 20, this.y - 10, this.R / 7)
+    circle(this.x + this.R + 20, this.y - 10, this.R / 7)
+    noFill()
+    stroke(255)
+  }
+  this.move = function() {
+
+ 
+    if (this.x >= width || this.x < 0) {
+      this.f = this.f * -2
+      this.x = this.x + random(1, -1)
+      this.y = this.y + random(1, -1)
+    }
+    if (this.y >= height || this.y < 0) {
+    
+      this.f = this.f * -1
+      this.x = this.x + random(1, -1)
+      this.y = this.y + random(1, -1)
+    }
+    this.x = this.x + random(1, -1)
+    this.y = this.y + random(1, -1)
+
+  }
+  this.rotat=function(){
+  
+  }
+  
+}
